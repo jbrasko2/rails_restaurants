@@ -1,0 +1,7 @@
+<h1> High Dollar Restaurants </h1>
+
+<ul>
+    <% @restaurants.each do |restaurant| %>
+        <li> <%= link_to(restaurant.name_and_cuisine, restaurant_path(restaurant)) %> - <%= restaurant.generate_stars %> - <%= restaurant.generate_dollarsigns %></li>
+    <% end%>
+</ul>

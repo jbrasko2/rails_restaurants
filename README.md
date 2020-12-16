@@ -5,7 +5,7 @@
 - create a model file - inherit from ActiveRecord::Base
 - create a controller file
 - create model methods
-    - #name_and_rating
+    - #name_and_cuisine
     - #star_generator
     - #dollar_sign_generator
     - .sort_by_price

@@ -1,0 +1,20 @@
+<h1>Restaurants</h1>
+
+<form method="get" action="/restaurants">
+    <input type="hidden" name="expensive" value="expensive">
+    <input type="submit" value="High Dollar">
+</form>
+
+<%# <a href="/restaurants?expensive=expensive">High Dollar</a> %>
+
+<form method="get" action="/restaurants">
+    <input type="hidden" name="price" value="expensive">
+    <input type="submit" value="Sort by Price">
+</form>
+
+<ul>
+    <% @restaurants.each do |restaurant| %>
+        <li> <%= link_to(restaurant.name_and_cuisine, restaurant_path(restaurant)) %> - <%= restaurant.generate_stars %> - <%= restaurant.generate_dollarsigns %></li>
+    <% end%>
+</ul>
+

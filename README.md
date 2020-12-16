@@ -1,24 +1,19 @@
-# README
+# RAILS RESTAURANTS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- create a migration for a Restaurant Model
+    - attributes: name:string, cuisine:string, description:text, price(1-4):integer, rating(1-5):integer, is_chain:boolean
+- create a model file - inherit from ActiveRecord::Base
+- create a controller file
+- create model methods
+    - #name_and_rating
+    - #display_price_range
+    - .high_dollar
+- make an index route
+    - create associated action + view
+    - add seed data
+- make a show route
+    - create associated action + view
+- add links to go from index to show route
+- add links to layout
+- add custom route that shows high dollar restaurants
+    - create associated action + view

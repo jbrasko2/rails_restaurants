@@ -6,7 +6,10 @@
 - create a controller file
 - create model methods
     - #name_and_rating
-    - #display_price_range
+    - #star_generator
+    - #dollar_sign_generator
+    - .sort_by_price
+    - .sort_by_rating
     - .high_dollar
 - make an index route
     - create associated action + view

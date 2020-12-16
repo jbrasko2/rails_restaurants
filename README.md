@@ -1,5 +1,7 @@
 # RAILS RESTAURANTS
 
+active record querying: https://guides.rubyonrails.org/active_record_querying.html#ordering
+
 - create a migration for a Restaurant Model
     - attributes: name:string, cuisine:string, description:text, price(1-4):integer, rating(1-5):integer, is_chain:boolean
 - create a model file - inherit from ActiveRecord::Base

@@ -1,7 +1,12 @@
 # RAILS RESTAURANTS
 
-active record querying: https://guides.rubyonrails.org/active_record_querying.html#ordering
+# Day 2 To Do:
+- create a form for making new shoes
+    - demonstrate creating the same form with form_tag, form_for, and form_with
+- create a form for editing a shoe 
+- add a button to delete a shoe
 
+# Day 1 To Do:
 - create a migration for a Restaurant Model
     - attributes: name:string, cuisine:string, description:text, price(1-4):integer, rating(1-5):integer, is_chain:boolean
 - create a model file - inherit from ActiveRecord::Base
@@ -22,3 +27,5 @@ active record querying: https://guides.rubyonrails.org/active_record_querying.ht
 - add links to layout
 - add custom route that shows high dollar restaurants
     - create associated action + view
+
+active record querying: https://guides.rubyonrails.org/active_record_querying.html#ordering

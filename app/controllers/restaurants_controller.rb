@@ -1,11 +1,6 @@
 class RestaurantsController < ApplicationController
   
-  def show
-    @restaurant = Restaurant.find_by(id: params[:id])
-  end
-
   def index
-    # byebug
     if params[:expensive]
       @restaurants = Restaurant.high_dollar.sort_by_rating
     elsif params[:price]
@@ -13,6 +8,10 @@ class RestaurantsController < ApplicationController
     else
       @restaurants = Restaurant.sort_by_rating
     end
+  end
+
+  def show
+    @restaurant = Restaurant.find_by(id: params[:id])
   end
 
   def high_dollar

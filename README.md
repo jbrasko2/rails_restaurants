@@ -1,10 +1,10 @@
 # RAILS RESTAURANTS
 
 # Day 2 To Do:
-- create a form for making new shoes
+- create a form for making new restaurants
     - demonstrate creating the same form with form_tag, form_for, and form_with
-- create a form for editing a shoe 
-- add a button to delete a shoe
+- create a form for editing a restaurant
+- add a button to delete a restaurant
 
 # Day 1 To Do:
 - create a migration for a Restaurant Model
@@ -29,3 +29,36 @@
     - create associated action + view
 
 active record querying: https://guides.rubyonrails.org/active_record_querying.html#ordering
+
+```
+<form action="/restaurants" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label>Name:</label>
+    <input type="text" name="restaurants[name]">
+    <input type="submit" value="Create">
+</form>
+
+<hr>
+
+<%= form_tag(restaurants_path) do %>
+    <%= label_tag("Name:") %>
+    <%= text_field_tag("restaurants[name]") %>
+    <%= submit_tag("Create") %>
+<% end %>
+
+<hr>
+
+<%= form_for(@restaurant) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %>
+    <%= f.submit %>
+<% end %>
+
+<hr>
+
+<%= form_with(model: @restaurant) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %>
+    <%= f.submit %>
+<% end %>
+```

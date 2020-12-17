@@ -1,0 +1,17 @@
+<h1>Edit Restaurant</h1>
+
+<%= form_with(model: @restaurant) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %> <br>
+    <%= f.label("Cuisine") %>
+    <%= f.text_field(:cuisine) %> <br>
+    <%= f.label("Description:") %>
+    <%= f.text_area(:description) %> <br>
+    <%= f.label("Price:") %>
+    <%= f.select(:price, [1,2,3,4]) %> <br>
+    <%= f.label("Rating:") %>
+    <%= f.select(:rating, 1..5) %> <br>
+    <%= f.label("Chain:") %>
+    <%= f.select(:is_chain, [["Yes", true], ["No", false]]) %> <br>
+    <%= f.submit %>
+<% end %>

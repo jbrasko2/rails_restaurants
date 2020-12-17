@@ -10,12 +10,49 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def new
+    @restaurant = Restaurant.new
+  end
+
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+    # byebug
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :new
+      # redirect_to new_restaurant_path
+    end
+  end
+
   def show
     @restaurant = Restaurant.find_by(id: params[:id])
   end
 
+  def edit
+    @restaurant = Restaurant.find_by(id: params[:id])
+  end
+
+  def update
+    @restaurant = Restaurant.find_by(id: params[:id])
+    @restaurant.update(restaurant_params)
+    redirect_to restaurant_path(@restaurant)
+  end
+
+  def destroy
+    @restaurant = Restaurant.find_by(id: params[:id])
+    @restaurant.destroy
+    redirect_to restaurants_path
+  end
+
   def high_dollar
     @restaurants = Restaurant.high_dollar.sort_by_rating
+  end
+
+  private
+
+  def restaurant_params
+    params.require(:restaurant).permit(:name, :cuisine, :description, :price, :rating, :is_chain)
   end
 
 end

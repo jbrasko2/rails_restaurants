@@ -24,9 +24,9 @@ class Restaurant < ApplicationRecord
             "⭐️"
         elsif self.rating == 2
             "⭐️⭐️"
-        elsif self.rating == 2
+        elsif self.rating == 3
             "⭐️⭐️⭐️"
-        elsif self.rating == 2
+        elsif self.rating == 4
             "⭐️⭐️⭐️⭐️"
         else
             "⭐️⭐️⭐️⭐️⭐️"

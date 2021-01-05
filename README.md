@@ -34,7 +34,7 @@
 - add custom route that shows high dollar restaurants
     - create associated action + view
 
-active record querying: https://guides.rubyonrails.org/active_record_querying.html#ordering
+[active record querying](https://guides.rubyonrails.org/active_record_querying.html#ordering)
 
 ```
 <form action="/restaurants" method="post">

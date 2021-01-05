@@ -1,5 +1,11 @@
 # RAILS RESTAURANTS
 
+# Day 3 To Do:
+- Why use AR model validations as opposed to view or controller validations
+- Use the [Active Record Validations Guide](https://guides.rubyonrails.org/active_record_validations.html#common-validation-options) to add standard validations for our models
+- Display error messages using  `.errors`
+- Create custom validations
+
 # Day 2 To Do:
 - create a form for making new restaurants
     - demonstrate creating the same form with form_tag, form_for, and form_with

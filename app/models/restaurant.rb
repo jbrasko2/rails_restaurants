@@ -1,5 +1,13 @@
 class Restaurant < ApplicationRecord
 
+    validates :name, :cuisine, :description, presence: true
+    validates :cuisine, uniqueness: {scope: :name, message: 'with that name has already been taken'}
+    validates :name, confirmation: true
+    validates :name, two_word: true
+    #validates_presence_of :name, :cuisine, :description
+    # validates :price, numericality: {greater_than: 0, less_than: 5, message: "must be between 1 and 4"}
+    # validates_uniqueness_of :cuisine, scope: :name, message: 'with that name has already been taken'
+    
     def self.sort_by_rating
         # self.all.sort_by{|restaurant| restaurant.rating }.reverse
         self.order(rating: :desc)

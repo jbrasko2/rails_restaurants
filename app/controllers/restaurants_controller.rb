@@ -16,19 +16,11 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-
-
     @restaurant = Restaurant.new(restaurant_params)
-    # if restaurant_params[:name] == ""
-    #   @errors << "Restaurant must have a name"
-    # end
-    # byebug
     if @restaurant.save
       redirect_to restaurant_path(@restaurant)
     else
-      # byebug
       render :new
-      # redirect_to new_restaurant_path
     end
   end
 
@@ -57,7 +49,6 @@ class RestaurantsController < ApplicationController
   end
 
   private
-
   def restaurant_params
     params.require(:restaurant).permit(:name, :cuisine, :description, :price, :rating, :is_chain, cuisine_attributes: [:name])
   end

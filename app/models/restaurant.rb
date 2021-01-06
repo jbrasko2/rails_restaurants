@@ -1,4 +1,5 @@
 class Restaurant < ApplicationRecord
+    belongs_to :cuisine
 
     validates :name, :cuisine, :description, presence: true
     validates :cuisine, uniqueness: {scope: :name, message: 'with that name has already been taken'}
@@ -24,7 +25,7 @@ class Restaurant < ApplicationRecord
     end
 
     def name_and_cuisine
-        "#{self.name} - #{self.cuisine}"
+        "#{self.name} - #{self.cuisine.name}"
     end
 
     def generate_stars 

@@ -7,7 +7,7 @@ class Restaurant < ApplicationRecord
 
     def cuisine_attributes=(attr)
         # find or create a cuisine by name
-        # binding.pry
+        binding.pry 
         if attr["name"].present?
             self.cuisine = Cuisine.find_or_create_by(attr)
         end

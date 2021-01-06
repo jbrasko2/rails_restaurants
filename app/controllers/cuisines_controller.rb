@@ -10,7 +10,7 @@ class CuisinesController < ApplicationController
     end
 
     def create
-        binding.pry
+        # binding.pry
         @cuisine = Cuisine.new(cuisine_params)
         if @cuisine.save
             redirect_to cuisine_path(@cuisine)

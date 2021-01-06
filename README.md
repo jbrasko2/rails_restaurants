@@ -3,8 +3,8 @@
 # Day 4 To Do:
 - Why use nested forms?
 - [Action View Form Helpers](https://guides.rubyonrails.org/form_helpers.html#nested-forms)
-- Make collection select for existing Cuisines
-- Make nested form for new Cuisine
+- Collection select for existing Cuisines
+- Nested form for new Cuisine 
 - Nested form to create 3 new restaurants when creating a cuisine
 
 # Day 3 To Do:

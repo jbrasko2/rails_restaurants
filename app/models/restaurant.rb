@@ -1,8 +1,19 @@
 class Restaurant < ApplicationRecord
-    belongs_to :cuisine
+    belongs_to :cuisine # cuisine & cuisine=, build_cuisine methods
     validates :name, :cuisine, :description, presence: true
     validates :name, uniqueness: {scope: :cuisine, message: 'with that cuisine has already been taken'}
     validates :name, two_word: true
+    # accepts_nested_attributes_for :cuisine # cuisine_attributes= 
+
+    def cuisine_attributes=(attr)
+        # find or create a cuisine by name
+        # binding.pry
+        if attr["name"].present?
+            self.cuisine = Cuisine.find_or_create_by(attr)
+        end
+        # associate it with the restaurant
+        # binding.pry
+    end
     
     # validates :name, confirmation: true
     # accepts_nested_attributes_for :cuisine

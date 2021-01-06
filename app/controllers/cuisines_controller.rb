@@ -5,9 +5,12 @@ class CuisinesController < ApplicationController
 
     def new
         @cuisine = Cuisine.new
+        3.times {@cuisine.restaurants.build}
+        # binding.pry
     end
 
     def create
+        binding.pry
         @cuisine = Cuisine.new(cuisine_params)
         if @cuisine.save
             redirect_to cuisine_path(@cuisine)
@@ -23,6 +26,6 @@ class CuisinesController < ApplicationController
     private
 
     def cuisine_params
-        params.require(:cuisine).permit(:name)
+        params.require(:cuisine).permit(:name, restaurants_attributes: [:name, :description, :price, :rating, :is_chain])
     end
 end

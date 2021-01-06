@@ -1,0 +1,19 @@
+<h1>New Cuisine</h1>
+
+<% if @cuisine.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@cuisine.errors.count, "error") %> prohibited this cuisine from being saved:</h2>
+
+    <ul>
+      <% @cuisine.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@cuisine) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %> <br>
+    <%= f.submit %>
+<% end %>

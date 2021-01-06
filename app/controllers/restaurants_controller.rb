@@ -16,6 +16,7 @@ class RestaurantsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
       redirect_to restaurant_path(@restaurant)
@@ -50,7 +51,7 @@ class RestaurantsController < ApplicationController
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :cuisine, :description, :price, :rating, :is_chain)
+    params.require(:restaurant).permit(:name, :description, :price, :rating, :is_chain, :cuisine_id, cuisine_attributes: [:name])
   end
 
 end

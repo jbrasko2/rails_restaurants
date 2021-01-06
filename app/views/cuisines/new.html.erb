@@ -12,8 +12,22 @@
   </div>
 <% end %>
 
-<%= form_for(@cuisine) do |f| %>
+<%= form_with(model: @cuisine) do |f| %>
     <%= f.label("Name:") %>
     <%= f.text_field(:name) %> <br>
+    <hr>
+    New Restaurants: <br>
+    <%= f.fields_for :restaurants do |r|%>
+        <%= r.label("Name:") %>
+        <%= r.text_field(:name) %> <br>
+        <%= r.label("Description:") %>
+        <%= r.text_area(:description) %> <br>
+        <%= r.label("Price:") %>
+        <%= r.select(:price, [1,2,3,4]) %> <br>
+        <%= r.label("Rating:") %>
+        <%= r.select(:rating, 1..5) %> <br>
+        <%= r.label("Chain:") %>
+        <%= r.select(:is_chain, [["Yes", true], ["No", false]]) %> <br>
+    <% end %>
     <%= f.submit %>
 <% end %>

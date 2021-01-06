@@ -2,9 +2,9 @@ class Restaurant < ApplicationRecord
     belongs_to :cuisine
     validates :name, :cuisine, :description, presence: true
     validates :name, uniqueness: {scope: :cuisine, message: 'with that cuisine has already been taken'}
-    validates :name, confirmation: true
     validates :name, two_word: true
-
+    
+    # validates :name, confirmation: true
     # accepts_nested_attributes_for :cuisine
     #validates_presence_of :name, :cuisine, :description
     # validates :price, numericality: {greater_than: 0, less_than: 5, message: "must be between 1 and 4"}

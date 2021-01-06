@@ -12,7 +12,7 @@
   </div>
 <% end %>
 
-<%= form_for(@restaurant) do |f| %>
+<%= form_with(model: @restaurant) do |f| %>
     <%= f.label("Name:") %>
     <%= f.text_field(:name) %> <br>
     <%= f.label("Cuisine") %>

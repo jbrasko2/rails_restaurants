@@ -1,5 +1,12 @@
 # RAILS RESTAURANTS
 
+# Day 4 To Do:
+- Why use nested forms?
+- [Action View Form Helpers](https://guides.rubyonrails.org/form_helpers.html#nested-forms)
+- Make collection select for existing Cuisines
+- Make nested form for new Cuisine
+- Nested form to create 3 new restaurants when creating a cuisine
+
 # Day 3 To Do:
 - Why use AR model validations as opposed to view or controller validations
 - Use the [Active Record Validations Guide](https://guides.rubyonrails.org/active_record_validations.html#common-validation-options) to add standard validations for our models

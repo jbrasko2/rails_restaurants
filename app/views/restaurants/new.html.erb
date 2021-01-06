@@ -15,12 +15,8 @@
 <%= form_for(@restaurant) do |f| %>
     <%= f.label("Name:") %>
     <%= f.text_field(:name) %> <br>
-    <!-- <%= f.label("Cuisine") %>
-    <%= f.text_field(:cuisine) %> <br> -->
-    <%= f.fields_for :cuisine do |c| %>
-      <%= c.label :brand_name %>
-      <%= c.text_field(:name)%>
-    <% end %><br>
+    <%= f.label("Cuisine") %>
+    <%= f.text_field(:cuisine) %> <br>
     <%= f.label("Description:") %>
     <%= f.text_area(:description) %> <br>
     <%= f.label("Price:") %>

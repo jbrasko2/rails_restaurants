@@ -12,13 +12,15 @@
   </div>
 <% end %>
 
-<%= form_with(model: @restaurant) do |f| %>
+<%= form_for(@restaurant) do |f| %>
     <%= f.label("Name:") %>
     <%= f.text_field(:name) %> <br>
-    <%= f.label("Name Confirmation:") %>
-    <%= f.text_field(:name_confirmation) %> <br>
-    <%= f.label("Cuisine") %>
-    <%= f.text_field(:cuisine) %> <br>
+    <!-- <%= f.label("Cuisine") %>
+    <%= f.text_field(:cuisine) %> <br> -->
+    <%= f.fields_for :cuisine do |c| %>
+      <%= c.label :brand_name %>
+      <%= c.text_field(:name)%>
+    <% end %><br>
     <%= f.label("Description:") %>
     <%= f.text_area(:description) %> <br>
     <%= f.label("Price:") %>

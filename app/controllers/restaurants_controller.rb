@@ -12,9 +12,11 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
+    @restaurant.build_cuisine
   end
 
   def create
+
 
     @restaurant = Restaurant.new(restaurant_params)
     # if restaurant_params[:name] == ""
@@ -57,7 +59,7 @@ class RestaurantsController < ApplicationController
   private
 
   def restaurant_params
-    params.require(:restaurant).permit(:name, :name_confirmation, :cuisine, :description, :price, :rating, :is_chain)
+    params.require(:restaurant).permit(:name, :cuisine, :description, :price, :rating, :is_chain, cuisine_attributes: [:name])
   end
 
 end

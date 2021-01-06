@@ -2,12 +2,20 @@ class Restaurant < ApplicationRecord
     belongs_to :cuisine
 
     validates :name, :cuisine, :description, presence: true
-    validates :cuisine, uniqueness: {scope: :name, message: 'with that name has already been taken'}
+    validates :name, uniqueness: {scope: :cuisine, message: 'with that cuisine has already been taken'}
     validates :name, confirmation: true
     validates :name, two_word: true
+    # accepts_nested_attributes_for :cuisine
     #validates_presence_of :name, :cuisine, :description
     # validates :price, numericality: {greater_than: 0, less_than: 5, message: "must be between 1 and 4"}
     # validates_uniqueness_of :cuisine, scope: :name, message: 'with that name has already been taken'
+
+    def cuisine_attributes=(attr)
+
+        #find or create a cuisine with the name passed in
+        self.cuisine = Cuisine.find_or_create_by(attr)
+        #associate that cuisine with this restaurant
+    end
     
     def self.sort_by_rating
         # self.all.sort_by{|restaurant| restaurant.rating }.reverse

@@ -1,5 +1,10 @@
 # RAILS RESTAURANTS
 
+# Day 5 To Do:
+- When/Why use layouts?
+- When/Why use partials?
+- When/Why use helpers?
+
 # Day 4 To Do:
 - Why use nested forms?
 - [Action View Form Helpers](https://guides.rubyonrails.org/form_helpers.html#nested-forms)

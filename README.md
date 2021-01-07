@@ -1,9 +1,9 @@
 # RAILS RESTAURANTS
 
 # Day 5 To Do:
-- When/Why use layouts?
-- When/Why use partials?
-- When/Why use helpers?
+- When/Why use layouts? [Action View Layouts](https://api.rubyonrails.org/classes/ActionView/Layouts.html) - [Rendering Layouts](https://guides.rubyonrails.org/v5.2/layouts_and_rendering.html#structuring-layouts)
+- When/Why use partials? [Action View Partials](https://guides.rubyonrails.org/action_view_overview.html#partials)
+- When/Why use helpers? [Action View Helpers](https://guides.rubyonrails.org/action_view_helpers.html)
 
 # Day 4 To Do:
 - Why use nested forms?

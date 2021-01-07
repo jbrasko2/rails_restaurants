@@ -1,11 +1,11 @@
-<h1><%= @restaurant.name_and_cuisine%></h1>
+<h1><%= name_and_cuisine(@restaurant)%></h1>
 <h2> <%= @restaurant.generate_stars %> - <%= @restaurant.generate_dollarsigns %></h2>
 
 <p> <%= @restaurant.description %></p>
 
+<%= is_chain_restaurant(@restaurant)%>
 
 <%= link_to("Edit Restaurant", edit_restaurant_path(@restaurant)) %>
 <%= link_to("Delete Restaurant", restaurant_path(@restaurant), method:"delete") %>
-
 
 

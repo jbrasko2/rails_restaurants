@@ -1,16 +1,6 @@
 <h1>New Cuisine</h1>
 
-<% if @cuisine.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@cuisine.errors.count, "error") %> prohibited this cuisine from being saved:</h2>
-
-    <ul>
-      <% @cuisine.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<%= render partial: 'restaurants/errors', locals: {model: @cuisine}%>
 
 <%= form_with(model: @cuisine) do |f| %>
     <%= f.label("Name:") %>

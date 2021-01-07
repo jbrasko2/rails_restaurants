@@ -1,0 +1,26 @@
+
+
+<%= render partial: 'errors', locals: {model: @restaurant} %>
+
+<%= form_for(@restaurant) do |f| %>
+    <%= f.label("Name:") %>
+    <%= f.text_field(:name) %> <br>
+    <!-- <%= f.label("Cuisine") %>
+    <%= f.text_field(:cuisine) %> <br> -->
+    <%= f.label("Existing Cuisines:")%>
+    <!-- collection_select_args(params_key, collection, object_id, display in select ) -->
+    <%= f.collection_select(:cuisine_id, Cuisine.order(:name), :id, :name, prompt: true) %><br>
+    <%= f.fields_for :cuisine do |c|%>
+      <%= c.label("New Cuisine:")%> 
+      <%= c.text_field(:name) %> <br>
+    <% end %>
+    <%= f.label("Description:") %>
+    <%= f.text_area(:description) %> <br>
+    <%= f.label("Price:") %>
+    <%= f.select(:price, [1,2,3,4]) %> <br>
+    <%= f.label("Rating:") %>
+    <%= f.select(:rating, 1..5) %> <br>
+    <%= f.label("Chain:") %>
+    <%= f.select(:is_chain, [["Yes", true], ["No", false]]) %> <br>
+    <%= f.submit %>
+<% end %>

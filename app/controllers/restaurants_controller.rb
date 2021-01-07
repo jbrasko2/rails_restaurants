@@ -1,16 +1,8 @@
 class RestaurantsController < ApplicationController
-  
+  layout 'restaurant'
+  include RestaurantsHelper
   def index
-
-    if params[:expensive]
-      @restaurants = Restaurant.high_dollar.sort_by_rating
-    elsif params[:price]
-      @restaurants = Restaurant.sort_by_price
-    elsif params[:search] 
-      @restaurants = Restaurant.where('name Like ?', "%#{params[:search]}%")
-    else
-      @restaurants = Restaurant.sort_by_rating
-    end
+      @restaurants = filter(params[:filter])
   end
 
   def new
@@ -37,7 +29,6 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-    binding.pry
     @restaurant = Restaurant.find_by(id: params[:id])
     @restaurant.update(restaurant_params)
     redirect_to restaurant_path(@restaurant)

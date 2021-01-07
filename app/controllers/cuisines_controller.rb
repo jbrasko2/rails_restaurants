@@ -7,6 +7,7 @@ class CuisinesController < ApplicationController
         @cuisine = Cuisine.new
         3.times {@cuisine.restaurants.build}
         # binding.pry
+        render layout: 'restaurant'
     end
 
     def create

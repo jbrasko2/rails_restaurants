@@ -7,7 +7,6 @@ class Restaurant < ApplicationRecord
 
     def cuisine_attributes=(attr)
         # find or create a cuisine by name
-        binding.pry 
         if attr["name"].present?
             self.cuisine = Cuisine.find_or_create_by(attr)
         end
@@ -36,9 +35,20 @@ class Restaurant < ApplicationRecord
         self.where(price: 4)
     end
 
-    def name_and_cuisine
-        "#{self.name} - #{self.cuisine.name}"
+    def filter(param)
+          if param == "expensive"
+            Restaurant.high_dollar.sort_by_rating
+          elsif param == "price"
+            Restaurant.sort_by_price
+          elsif param != nil
+            Restaurant.where('name Like ?', "%#{param}%")
+          else
+            Restaurant.sort_by_rating
+          end
     end
+
+
+   
 
     def generate_stars 
         if self.rating == 1 

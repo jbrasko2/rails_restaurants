@@ -22,4 +22,20 @@ module RestaurantsHelper
           Restaurant.sort_by_rating
         end
   end
+
+    def display_header(cuisine)
+      if cuisine
+        content_tag(:h1, "#{cuisine.name} Restaurants")
+      else
+        content_tag(:h1, "All Restaurants")
+      end
+    end
+
+    def cuisine_select(f)
+      if params[:cuisine_id]
+        f.hidden_field :cuisine_id
+      else
+        render partial: "cuisine_select", locals: {f: f}
+      end
+    end
 end

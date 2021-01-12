@@ -7,3 +7,6 @@
 <% @cuisine.restaurants.each do |restaurant|%>
  <li><%= link_to(name_and_cuisine(restaurant), restaurant_path(restaurant)) %> - <%= restaurant.generate_stars %> - <%= restaurant.generate_dollarsigns %></li>
 <% end %>
+
+<hr>
+<%= link_to "New Restaurant", new_cuisine_restaurant_path(@cuisine) %>

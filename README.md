@@ -1,7 +1,7 @@
 # RAILS RESTAURANTS
 
 # Day 6 To Do:
-- When/how to use nested routes? [Nested Routes](https://api.rubyonrails.org/routing.html#nested-resources)
+- When/how to use nested routes? [Nested Routes](https://guides.rubyonrails.org/routing.html#nested-resources)
 
 # Day 5 To Do:
 - When/Why use layouts? [Action View Layouts](https://api.rubyonrails.org/classes/ActionView/Layouts.html) - [Rendering Layouts](https://guides.rubyonrails.org/v5.2/layouts_and_rendering.html#structuring-layouts)

@@ -2,12 +2,22 @@ class RestaurantsController < ApplicationController
   layout 'restaurant'
   include RestaurantsHelper
   def index
-      @restaurants = filter(params[:filter])
+      if params[:cuisine_id]
+        @cuisine = Cuisine.find_by_id(params[:cuisine_id])
+        @restaurants = @cuisine.restaurants
+      else
+        @restaurants = filter(params[:filter])
+      end
   end
 
   def new
-    @restaurant = Restaurant.new
-    @restaurant.build_cuisine
+    if params[:cuisine_id]
+      @cuisine = Cuisine.find_by_id(params[:cuisine_id])
+      @restaurant = @cuisine.restaurants.build
+    else
+      @restaurant = Restaurant.new
+      @restaurant.build_cuisine
+    end
   end
 
   def create

@@ -1,5 +1,9 @@
 # RAILS RESTAURANTS
 
+# Day 7 To Do:
+- Google Oauth
+- [Dotenv](https://github.com/bkeepers/dotenv)
+
 # Day 6 To Do:
 - When/how to use nested routes? [Nested Routes](https://guides.rubyonrails.org/routing.html#nested-resources)
 

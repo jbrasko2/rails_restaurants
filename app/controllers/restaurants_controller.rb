@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  layout 'restaurant'
+  # layout 'restaurant'
   include RestaurantsHelper
   def index
       if params[:cuisine_id]

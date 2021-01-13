@@ -11,6 +11,8 @@
   </head>
 
   <body>
+
+    <%= button_to "Log in with Google", '/auth/google_oauth2' %>
     <%= link_to("All Restaurants", restaurants_path) %>
     <%= link_to("High Dollar Restaurants", high_dollar_restaurants_path) %>
     <%= link_to("New Restaurant", new_restaurant_path) %>
